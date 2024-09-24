@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Russo+One&family=ABeeZee&display=swap">
+    <title>Carbon FootPrint</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Russo+One&family=Sen:wght@400..800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: 'ABeeZee', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000;
+            padding: 15px 30px;
+        }
+
+        .logo {
+            font-family: 'Russo One', sans-serif;
+            font-size: 24px;
+            color: #fff;
+            margin-left: 20px;
+        }
+
+        nav ul {
+            margin-left: 10px;
+            margin-top: 15px;
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 50px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        nav ul li {
+            margin-left: 30px; 
+        }
+
+        input[type="text"],
+        input[list] {
+            background-color: #000; 
+            color: #fff; 
+            border: none; 
+            font-size: 17px; 
+            padding: 5px;
+            width: 150px;
+        }
+
+        input[type="text"]::placeholder {
+            color: #fff; 
+        }
+
+        input[list]::-webkit-calendar-picker-indicator {
+            display: none;
+        }
+
+        main {
+            margin-top: 20px;
+            padding: 30px;
+        }
+
+        .explore-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .explore-buttons a {
+            background-color: #ff6b00;
+           
+            border: none;
+            padding: 10px 35px;
+            margin-right: 10px;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .explore-buttons a {
+            text-decoration: none;
+            color: #b0b0b0;
+        }
+
+        .carbon-btn {
+            color: white;
+        }
+
+        .explore-buttons a:not(.carbon-btn) {
+            background-color: black;
+            color: #B0B0B0;
+            border: 2px solid #B0B0B0;
+            border-radius: 25px;
+        }
+
+        .explore-buttons a:hover {
+            background-color: #ff6b00;
+            color: white;
+        }
+
+        .explore-buttons a:hover a {
+            color: white;
+        }
+
+        .content{
+            display: flex;
+            /* justify-content: space-between; */
+        }
+
+        .rocks{
+            display: flex;
+            gap: 10px;
+        }
+
+        .form-container {
+            height: 500px;
+            width: 1500px;
+            margin-top: 60px;
+            margin-left: 100px;
+            background-color: #000;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .form-container h2 {
+            font-family: 'Sen', sans-serif;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 35px;
+            display: flex;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #B0B0B0;
+        }
+
+        .form-group input[type="text"],
+        .form-group select {
+            width: 400px;
+            padding: 10px;
+            border: 1px solid #b0b0b0;
+            border-radius: 12px;
+            background-color: #000;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .form-group select {
+            cursor: pointer;
+        }
+
+        .form-group button {
+          
+            padding: 10px;
+            border: none;
+            border-radius: 15px;
+            background-color: #ff6b00;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #e65a00;
+        }
+
+        .per{
+            margin-top: 60px;
+            display: flex;
+            margin-bottom: 25px;
+        }
+
+        .time{
+            height: 35px;
+            background-color: black;
+            border-radius: 10px;
+            color:black;
+            font-style: bold;
+        }
+
+        .time #activity{
+            background-color: #b0b0b0;
+            height: 35px;
+            border-radius: 10px;
+        }
+
+        select {
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+            border: 1px solid #fff; /* Optional: white border */
+            padding: 8px; /* Optional: padding for better appearance */
+            border-radius: 4px; /* Optional: rounded corners */
+            outline: none; /* Remove outline */
+            font-size: 16px; /* Adjust font size if needed */
+            width: 200px; /* Adjust width if needed */
+        }
+
+        select option {
+            background-color: #000; /* Black background for options */
+            color: #fff; /* White text for options */
+        }
+
+        li  a:hover{
+            color: #FF6B00;
+        }
+
+        .explore-buttons select{
+            color: #B0B0B0;
+        }
+        .explore-buttons select:hover {
+            background-color: #ff6b00;
+            color: white;
+            border: none;
+            padding: 10px 35px;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            display: inline;
+            width: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">QUARRY CREW</div>
+        <nav>
+            <ul>
+                <li style="margin-top: 8px;"><a href="explore.htm">Home</a></li>
+                <li style="margin-top: 8px;"><a href="dashboard.htm">Dashboard</a></li>
+                <li style="margin-top: 4px;"><img src="loc.png" style="width: 26px; height: 26px;"></li>
+                <li style="margin-top: 4px;">
+                    <div style="margin-top: 5px;">
+                        Singareni
+                    </div>
+                </li>
+            
+                <!-- Added select box with options below the label -->
+               
+            
+                <li><img src="user.png" alt="User Avatar" style="margin-bottom: 8px; width: 45px; height: 45px;"></li>
+            </ul>
+            
+            
+        </nav>
+    </header>
+
+    <main>
+        <div class="explore-buttons">
+            <a href="explore.htm" >Explore</a>
+            <a href="carbon_foot.htm" class="carbon-btn" style="color: white;">Carbon Footprint</a>
+            <a href="sink_analysis.htm">Sink Analysis</a>
+            <select id="explore-options" name="explore-options" style="margin-top: 4px; margin-left: 40px; padding: 10px 35px; width: 250px; display: inline; border-radius: 25px;border: 2px solid #b0b0b0;" onchange="navigateToPage(this.value)">
+                <option value="carbon_neutra.htm">Carbon Neutralization</option>
+                <option value="carbon_neutra.htm">Renewable Resource Shift</option>
+                <option value="afforestation.htm">Afforestation Metrics</option>
+                <option value="ev_replacement.htm">Electric Vehicle Replacement</option>
+                <option value="methane_conversions.htm">Methane Conversions</option>
+            </select>
+        </div>
+        <div class="content">
+            <div class="rocks">
+                <img src="rock.png" style="width: 360px; height: 500px;">
+                <img src="rock.png" alt="Rock 2" style="transform: rotate(-30deg); width: 140px; height: 220px; margin-top: 260px;">
+            </div>
+            <div class="form-container">
+                <h2 style="font-size: px;">Emission Calculator</h2>
+                <div class="form-group">
+                    <select id="activity" name="activity" onchange="redirectToPage()">
+                            <option value="choose" style="padding-left: 30px;">Choose Activity</option>
+                            <option value="diesel" href="diesel.htm" onclick="diesel.htm">Diesel Usage</option>
+                            <option value="electricity">Electricity</option>
+                            <option value="coal">Coal Production</option>
+                            <option value="transportation">Transportation</option>
+                            <option value="methane">Methane Emission</option>
+                            <option value="equipment">Equipment Usage</option>
+                        </select>
+                </div>
+                <div style="margin-bottom: 40px; font-size: 30px; font-family: 'Sen', sans-serif;">Carbon Per Capita Emission</div>
+                <div class="form-group">
+                   
+                    <label for="workers" style="margin-right: 140px; font-size: 16px;">No. of workers</label>
+                    <input type="text" id="workers" name="workers">
+                </div>
+                <div class="form-group">
+                    <label for="hours" style="margin-right: 140px; font-size: 16px;">Working hours</label>
+                    <input type="text" id="hours" name="hours">
+                </div>
+                <div class="form-group">
+                    <label for="hours" style="margin-right: 140px; font-size: 16px;">Per capita emission</label>
+                    
+                </div>
+            </div>
+        </div>
+       
+    </main>
+    <script>
+        function redirectToPage() {
+            const selectedActivity = document.getElementById('activity').value;
+
+            if (selectedActivity === "diesel") {
+                window.location.href = "diesel.htm";
+            }
+            // Add more conditions if needed for other activities
+        }
+
+
+        function calculateEmission() {
+            // Get the number of workers and working hours from input fields
+            const workers = document.getElementById('workers').value;
+            const hours = document.getElementById('hours').value;
+    
+            // Check if the input is valid (both fields should be positive numbers)
+            if (workers <= 0 || hours <= 0 || isNaN(workers) || isNaN(hours)) {
+                alert("Please enter valid values for both workers and hours.");
+                return;
+            }
+    
+            // Assume a fixed emission rate (kg CO2 per worker-hour)
+            const emissionRatePerHour = 0.5; // Example: 0.5 kg CO2 per worker-hour
+    
+            // Calculate total emissions
+            const totalEmissions = workers * hours * emissionRatePerHour;
+    
+            // Calculate per capita emissions
+            const perCapitaEmission = (totalEmissions / workers).toFixed(2);
+    
+            // Update the button text with the calculated value
+            document.getElementById('calculateButton').textContent = `Per Capita Emission: ${perCapitaEmission} kg CO2`;
+        }
+    
+        // Attach the calculateEmission function to the button click event
+        document.getElementById('calculateButton').addEventListener('click', calculateEmission);
+        function navigateToPage(url) {
+            if (url) {
+                window.location.href = url;
+            }
+        }
+        
+    </script>
+    
+</body>
+
+</html>

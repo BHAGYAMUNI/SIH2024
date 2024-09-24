@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Russo+One&family=ABeeZee&display=swap">
+    <title>Explore</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+     @import url('https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap');
+     @import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Russo+One&family=Sen:wght@400..800&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'ABeeZee', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000;
+            padding: 15px 30px;
+            
+        }
+
+        .logo {
+            font-family: 'Russo One', sans-serif;
+            font-size: 24px;
+            color: #fff;
+            margin-left: 20px;
+        }
+
+        nav ul {
+            margin-left: 10px;
+            margin-top: 15px;
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 50px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+       
+
+        nav ul li {
+            margin-left: 30px; /* Reduced spacing */
+        }
+
+        input[type="text"],
+        input[list] {
+            background-color: #000; /* Match with the navbar background */
+            color: #fff; /* Match text color */
+            border: none; /* Remove borders */
+            font-size: 17px; /* Adjust text size to match the rest of the navbar */
+            padding: 5px;
+            width: 150px;
+        }
+
+        input[type="text"]::placeholder {
+            color: #fff; /* Match placeholder text color with navbar text */
+        }
+
+        input[list]::-webkit-calendar-picker-indicator {
+            display: none;
+        }
+
+        main {
+            margin-top: 20px;
+            padding: 30px;
+        }
+
+        .explore-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .explore-buttons a {
+            background-color: #ff6b00;
+            border: none;
+            padding: 10px 35px;
+            margin-right: 10px;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            
+        }
+
+        .explore-buttons a{
+            text-decoration: none;
+            color: #b0b0b0;
+        }
+
+        .explore-buttons a{
+            color: white;
+        }
+
+        .explore-buttons a:not(.explore-btn) {
+            background-color: black;
+            color: #B0B0B0;
+            border: 2px solid #B0B0B0;
+            border-radius: 25px;
+        }
+
+        .explore-buttons a:hover {
+            background-color: #ff6b00;
+            color: white;
+        }
+
+        .explore-buttons a:hover a {
+            color: white;
+        }
+
+        
+
+        .explore-buttons select:hover {
+            background-color: #ff6b00;
+            color: white;
+        }
+
+        .highlight-section {
+            margin-left: 35px;
+            display: flex;
+            background-color: #333;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            margin-top: 50px;
+            margin-right: 38px;
+        }
+
+        .highlight-section img {
+            width: 30%;
+            object-fit: cover;
+        }
+
+        .highlight-content {
+            background-color: #ff6b00;
+            padding: 20px;
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+        }
+
+        .highlight-content h2 {
+            margin-bottom: 0px;
+            font-family: "Sen", sans-serif;
+            font-style: normal;
+            font-size: 24px;
+        }
+
+        .highlight-content h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        
+
+        .emission-amount {
+            font-family: "Russo One", system-ui;
+            font-weight: 400;
+            color: #000;
+            font-size: 58px;
+            margin-top: 20px;
+
+        }
+
+        .sustainable-methods {
+            text-align: center;
+        }
+
+        .sustainable-methods h3 {
+            margin-top: 20px;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-family: "Sen", sans-serif;
+            font-style: normal;
+        }
+
+        .method-cards {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 220px;
+        }
+
+        .method-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+
+        .latest-blogs {
+            margin-top: 30px;
+            font-size: 18px;
+        }
+
+        .block-cards {
+            display: flex;
+            margin-left: 190px;
+            gap: 90px; 
+            margin-top: 30px;
+        }
+
+        .block-card {
+            background-color: #fff; 
+            color: #000; 
+            width: 300px; 
+            border-radius: 10px; 
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+            transition: transform 0.2s ease-in-out; 
+        }
+
+        .block-card:hover {
+            transform: scale(1.05); 
+        }
+
+        .block-card img {
+            padding: 30px;
+            width: 100%; 
+            height: 190px; 
+            object-fit: cover; 
+        }
+
+        .block-card-content {
+            padding: 15px; 
+            
+        }
+
+        .block-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-family: "Sen", sans-serif;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .block-card p {
+            font-size: 14px;
+            color: #b0b0b0; 
+            font-family: "ABeeZee", sans-serif;
+        }
+
+        .block-card-content a{
+            color: #000;
+            text-decoration: none;
+        }
+
+        select {
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+            border: 1px solid #fff; /* Optional: white border */
+            padding: 8px; /* Optional: padding for better appearance */
+            border-radius: 4px; /* Optional: rounded corners */
+            outline: none; /* Remove outline */
+            font-size: 16px; /* Adjust font size if needed */
+            width: 200px; /* Adjust width if needed */
+        }
+
+        select option {
+            background-color: #000; /* Black background for options */
+            color: #fff; /* White text for options */
+        }
+        li  a:hover{
+            color: #FF6B00;
+        }
+
+        .explore-buttons select{
+            color: #B0B0B0;
+        }
+        .explore-buttons select:hover {
+            background-color: #ff6b00;
+            color: white;
+            border: none;
+            padding: 10px 35px;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            display: inline;
+            width: 250px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">QUARRY CREW</div>
+        <nav>
+            <ul>
+                <li style="margin-top: 8px;"><a href="explore.htm" style="color: #ff6600;">Home</a></li>
+                <li style="margin-top: 8px;"><a href="dashboard.htm">Dashboard</a></li>
+                <li style="margin-top: 4px;"><img src="loc.png" style="width: 26px; height: 26px;"></li>
+                <li style="margin-top: 4px;">
+                    <div style="margin-top: 5px;">
+                        Singareni
+                    </div>
+                </li>
+                <li><img src="user.png" alt="User Avatar" style="margin-bottom: 8px; width: 45px; height: 45px;"></li>
+            </ul>
+            
+        </nav>
+    </header>
+
+    <main>
+        <div class="explore-buttons">
+            <a href="explore.htm" class="neutra-btn" style="color: white; background-color: #ff6b00;" >Explore</a>
+            <a href="carbon_foot.htm">Carbon Footprint</a>
+            <a href="sink_analysis.htm">Sink Analysis</a>
+            <select id="explore-options" name="explore-options" style="margin-top: 4px; width: 250px; display: inline; border-radius: 25px; margin-left: 40px; border: 2px solid #b0b0b0; padding: 10px 35px;" onchange="navigateToPage(this.value)">
+                <option value="carbon_neutra.htm">Carbon Neutralization</option>
+                <option value="carbon_neutra.htm">Renewable Resource Shift</option>
+                <option value="afforestation.htm">Afforestation Metrics</option>
+                <option value="ev_replacement.htm">Electric Vehicle Replacement</option>
+                <option value="methane_conversions.htm">Methane Conversions</option>
+            </select>
+        </div>
+
+        <div class="highlight-section">
+            <img src="mining-truck.png" alt="Mining Truck">
+            <div class="highlight-content">
+                <h2>CARBON EMISSIONS %</h2>
+                <h2>2023</h2>
+                <p class="emission-amount">2.8Gt</p>
+                <p style="color: #000;">India's carbon emissions increased by around 190 Mt to reach 2.8 Gt in 2023. This was a growth rate
+                    of slightly more than 7%, which was faster than the country's GDP growth of 6.7%</p>
+            </div>
+        </div>
+
+        <section class="sustainable-methods" style="margin-top: 50px;">
+            <h3>SUSTAINABLE METHODS</h3>
+            <div class="method-cards">
+                <div class="method-card">
+                    <img src="method1.png" alt="Carbon Footprint">
+                </div>
+                <div class="method-card">
+                    <img src="method2.png" alt="Carbon Capture">
+                </div>
+                <div class="method-card">
+                    <img src="method3.png" alt="Carbon Capture">
+                </div>
+            </div>
+        </section>
+
+        <div class="cards">
+            <div class="latest-blogs" style="margin-left: 650px;" >
+                <p style="font-family: Sen, sans-serif; font-size: 24px;">Latest Blogs</p>
+            </div>
+            <div class="block-cards">
+                <div class="block-card">
+                    <img src="block1.png" alt="Carbon Footprint">
+                    <div class="block-card-content">
+                        <h3><a href="https://www.drishtiias.com/daily-news-analysis/converting-co2-to-methane">Carbon emission increa...</a></h3>
+                        <p>Carbon emissions in India are projected to
+                            increase in India by 8.2 percent in 2023, and 
+                            by 4 per cent in China, according to an international 
+                            research.</p>
+                    </div>
+                </div>
+                <div class="block-card">
+                    <img src="block2.png" alt="Sustainable Mining">
+                    <div class="block-card-content">
+                        <h3><a href="https://medium.com/@carbon3/a-sustainable-mining-industry-20f7723436a8">A Sustainable Mining Indu...</a></h3>
+                        <p>How does the mining industry's supply chain impact 
+                            decarbonization efforts, and what measures can 
+                            be taken to reduce the industry's carbon ...</p>
+                    </div>
+                </div>
+                <div class="block-card">
+                    <img src="block3.png" alt="CO2 to Methane">
+                    <div class="block-card-content">
+                        <h3><a href="https://www.drishtiias.com/daily-news-analysis/converting-co2-to-methane">CO2 to Meth...</a></h3>
+                        <p>Converting CO2 to Methane,Indian Scientists have designed a photochemical
+                            method (Photocatalyst).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+    <script>
+        function navigateToPage(url) {
+            if (url) {
+                window.location.href = url;
+            }
+        }
+    </script>
+</body>
+
+</html>
